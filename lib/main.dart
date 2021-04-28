@@ -5,8 +5,16 @@ import 'package:flutter/material.dart';
 // }
  
 void main() => runApp(MyApp());
- 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatefulWidget {
+ @override
+ State<StatefulWidget> createState() {
+   // TODO: implement createState
+   return _MyAppState();
+ }
+}
+
+class _MyAppState extends State<MyApp> {
  var questionIndex = 0;
  
  void answerQuestion() {
@@ -30,15 +38,15 @@ class MyApp extends StatelessWidget {
            Text(
              questions[questionIndex],
            ),
-           RaisedButton(
+           ElevatedButton(
              child: Text('jawab 1'),
              onPressed: answerQuestion,
            ),
-           RaisedButton(
+           ElevatedButton(
              child: Text('jawab 2'),
              onPressed: () => print('jawab 2 dipilih!'), // ini akan muncul pada debug console di visual code
            ),
-           RaisedButton(
+           ElevatedButton(
              child: Text('jawab 3'),
              onPressed: () {
                // ...
